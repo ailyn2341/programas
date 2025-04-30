@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #aff0ec;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgb(45, 226, 226);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        select, input[type="text"], input[type="number"], textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #8febee;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-container {
+            display: none;
+        }
+        .form-title {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .container {
+        text-align: center;
+    }
+
+        .descarga {
+        max-width: 100%;  
+        height: auto;   
+        }
+    </style>
+    <script>
+        // Función para mostrar la interfaz correspondiente según la opción seleccionada
+        function showForm(option) {
+            // Ocultar todas las interfaces
+            const forms = document.querySelectorAll('.form-container');
+            forms.forEach(form => {
+                form.style.display = 'none';
+            });
+
+            // Mostrar el formulario correspondiente
+            const selectedForm = document.getElementById(option);
+            if (selectedForm) {
+                selectedForm.style.display = 'block';
+            }
+        }
+
+        // Función para calcular el total de la compra en el formulario de Medicamento
+        function calcularTotal() {
+            const precioMedicamento = parseFloat(document.getElementById('precioMedicamento').value) || 0;
+            const cantidad = parseInt(document.getElementById('cantidad').value) || 0;
+            const total = precioMedicamento * cantidad;
+            document.getElementById('total').innerText = 'Total de la compra: $' + total.toFixed(2);
+        }
+
+        // Función para mostrar mensaje de cita agendada
+        function confirmarCita() {
+            alert('¡Tu cita está agendada exitosamente!');
+        }
+
+        // Función para enviar el formulario de certificados
+        function enviarCertificado() {
+            alert('¡Certificado ingresado correctamente!');
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bienvenido A Farmacia Sofi!</h1>
+        <h1>A continuacion puedes obervar nuestro menu</h1>
+        <img src="descarga.jpg">
+        
+        <!-- Menú de opciones -->
+        <select onchange="showForm(this.value)">
+            <option value="">Selecciona una opción</option>
+            <option value="medicamento">Medicamento</option>
+            <option value="consulta">Consulta</option>
+            <option value="naturista">Naturista</option>
+            <option value="certificados">Certificados</option>
+        </select>
+
+        <!-- Formulario Medicamento -->
+        <div id="medicamento" class="form-container">
+            <h2 class="form-title">Bienvenido a Medicamentos</h2>
+            <label for="medicamentoNombre">Ingresa el nombre del medicamento:</label>
+            <input type="text" id="medicamentoNombre" placeholder="Ejemplo: Paracetamol">
+
+            <label for="precioMedicamento">Precio por unidad:</label>
+            <input type="number" id="precioMedicamento" placeholder="Precio en $">
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" placeholder="Cantidad" onchange="calcularTotal()">
+
+            <p id="total">Total de la compra: $0.00</p>
+
+            <button type="button" onclick="calcularTotal()">Ver total</button>
+        </div>
+
+        <!-- Formulario Consulta -->
+        <div id="consulta" class="form-container">
+            <h2 class="form-title">Agendar Consulta</h2>
+            <label for="nombreConsulta">Nombre:</label>
+            <input type="text" id="nombreConsulta">
+
+            <label for="telefonoConsulta">Número de teléfono:</label>
+            <input type="text" id="telefonoConsulta">
+
+            <label for="fechaConsulta">Fecha:</label>
+            <input type="date" id="fechaConsulta">
+
+            <label for="horaConsulta">Hora:</label>
+            <input type="time" id="horaConsulta"><br>
+
+            <label for="situacionConsulta">Situación:</label>
+            <textarea id="situacionConsulta"></textarea>
+
+            <button type="button" onclick="confirmarCita()">Confirmar Cita</button>
+        </div>
+
+        <!-- Formulario Naturista -->
+        <div id="naturista" class="form-container">
+            <h2 class="form-title">Bienvenido a Naturistas</h2>
+            <label for="naturistaNombre">Ingresa el nombre del producto:</label>
+            <input type="text" id="naturistaNombre" placeholder="Ejemplo: Té de Manzanilla">
+
+            <label for="precioNaturista">Precio por unidad:</label>
+            <input type="number" id="precioNaturista" placeholder="Precio en $">
+
+            <label for="cantidadNaturista">Cantidad:</label>
+            <input type="number" id="cantidadNaturista" placeholder="Cantidad" onchange="calcularTotal()">
+
+            <p id="totalNaturista">Total de la compra: $0.00</p>
+
+            <button type="button" onclick="calcularTotal()">Ver total</button>
+        </div>
+
+        <!-- Formulario Certificados -->
+        <div id="certificados" class="form-container">
+            <h2 class="form-title">Formulario de Certificados</h2>
+            <label for="nombreCertificado">Nombre:</label>
+            <input type="text" id="nombreCertificado">
+
+            <label for="domicilioCertificado">Domicilio:</label>
+            <input type="text" id="domicilioCertificado">
+
+            <label for="tipoSangreCertificado">Tipo de sangre:</label>
+            <input type="text" id="tipoSangreCertificado">
+
+            <label for="edadCertificado">Edad:</label>
+            <input type="number" id="edadCertificado">
+
+            <label for="telefonoCertificado">Teléfono:</label>
+            <input type="text" id="telefonoCertificado">
+
+            <label for="pesoCertificado">Peso:</label>
+            <input type="number" id="pesoCertificado">
+
+            <label for="tallaCertificado">Talla:</label>
+            <input type="text" id="tallaCertificado">
+
+            <label for="enfermedadCertificado">¿Alguna enfermedad?</label>
+            <input type="text" id="enfermedadCertificado">
+
+            <button type="button" onclick="enviarCertificado()">Enviar Certificado</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
