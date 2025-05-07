@@ -3,11 +3,9 @@
     const contenidoInicial = document.querySelector(".contenido");
     const menu = document.querySelector(".menu-bar");
   
-    // Oculta el contenido de inicio
     contenidoInicial.style.display = "none";
     menu.style.display = "none";
   
-    // Muestra la sección de medicamentos
     seccionMedicamento.style.display = "block";
   }
 
@@ -37,11 +35,9 @@ function confirmarCita() {
   alert('¡Tu cita está agendada exitosamente!');
 }
 function mostrarconsultas() {
-  // Oculta todos los demás
   document.getElementById("seccion-medicamento").style.display = "none";
   document.querySelector(".contenido").style.display = "none";
 
-  // Muestra solo la sección de consultas
   document.getElementById("seccion-consultas").style.display = "block";
 }
 function mostrarInicio() {
@@ -56,4 +52,14 @@ function naturista(){
   
   document.getElementById("seccion-naturista").style.display = "block";
 }
+function bebes(){
+  document.getElementById("seccion-medicamento").style.display = "none";
+  document.querySelector(".contenido").style.display = "none";
+  document.getElementById("seccion-consultas").style.display ="none";
+  document.getElementById("seccion-naturista").style.display = "none";
+
+  document.getElementById("seccion-bebes").style.display = "block";
+}
+
+
 
