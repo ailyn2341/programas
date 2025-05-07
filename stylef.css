@@ -81,3 +81,30 @@ h1 {
 .contenido-oculto {
   display: none;
 }
+#seccion-naturista{
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #b2ebf2;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #999;
+  display: none; 
+}
+#seccion-consultas{
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #b2ebf2;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #999;
+  display: none; 
+}
+#seccion-bebes{
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #b2ebf2;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #999;
+  display: none; 
+}
