@@ -12,7 +12,7 @@
     <a href="#" class="menu-item" onclick="mostrarMedicamentos()">Medicamento</a>
     <a href="#" class="menu-item" onclick="mostrarconsultas()">Consulta</a>
     <a href="#" class="menu-item" onclick="naturista()">Naturista</a>
-    <a href="#" class="menu-item">Bebés</a>
+    <a href="#" class="menu-item" onclick="bebes()">Bebés</a>
     <a href="#" class="menu-item">Promociones</a>
   </div>
 
@@ -135,16 +135,45 @@
 </div>
 
 
-<div id="seccion-bebes" class="contenido-oculto">
+  <div id="seccion-bebes" class="contenido-oculto">
   <h2>NUESTRO APARTADO DE BEBES:</h2>
   <h3>Aqui Puedes Encontrar Lo Necesario Para Tu BEBE!!!</h3>
   
+  <div class="cuadro2">
+    <label><input type="checkbox" class="producto" value="30"><img src="mamilaazul.jpg" alt="mamilaazul"></label>
+        ㅤㅤㅤㅤ<label><input type="checkbox" class="producto" value="30"><img src="mamilarosa.jpg" alt="mamilarosa"></label>
+        ㅤㅤㅤㅤ<label><input type="checkbox" class="producto" value="20"><img src="silicon.jpg" alt="silicon"><br></label>
+  <h3>Mamila Azul...$30ㅤㅤㅤㅤMamila Rosa...$30ㅤㅤㅤㅤSilicon...$20</h3>
+  
+  
+    <label><input type="checkbox" class="producto" value="10"><img src="chuponazul.jpg" alt="chuponazul"></label>
+        ㅤㅤㅤㅤ<label><input type="checkbox" class="producto" value="10"><img src="chuponrosa.jpg" alt="chuponrosa"></label>
+        ㅤㅤㅤㅤ<label><input type="checkbox" class="producto" value="80"><img src="pañales.jpg" alt="pañales"><br></label>
+  <h3>Chupon Azul..$10ㅤㅤㅤㅤChupon Rosa..$10ㅤㅤㅤㅤPañales..80</h3> 
+
+
+  <label><input type="checkbox" class="producto" value="35"><img src="aceite.jpg" alt="aceite"></label>
+        ㅤㅤㅤㅤ<label><input type="checkbox" class="producto" value="40"><img src="crema.jpg" alt="crema"></label>
+        ㅤㅤㅤㅤ<label><input type="checkbox" class="producto" value="20"><img src="toallitas.jpg" alt=" toallitas"><br></label>
+  <h3>Aceite...$35ㅤㅤㅤㅤCrema...$40ㅤㅤㅤㅤToallitas...$20</h3> 
+
+
+  <label><input type="checkbox" class="producto" value="15"><img src="gerber.jpg" alt="gerber"></label>
+        ㅤㅤㅤㅤ<label><input type="checkbox" class="producto" value="10"><img src="goteros.jpg" alt="goteros"></label>
+        ㅤㅤㅤㅤ<label><input type="checkbox" class="producto" value="90"><img src="leche.jpg" alt="leche"><br></label>
+  <h3>Gerber...$15ㅤㅤㅤㅤGoteros...$10ㅤㅤㅤㅤLeche...$90</h3> 
+
+
+  <label><input type="checkbox" class="producto" value="30"><img src="talco.jpg" alt="talco"></label>
+  <h3>Talco...$30</h3>
+
+  <h3>Total: $<span id="total">0</span></h3>
+
+<button onclick="comprar()">Comprar</button>
 
 
   </div> 
 </div>
-
-
   <script src="scriptf.js"></script>
 </body>
 </html>
